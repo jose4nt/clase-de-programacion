@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Laboratorio 4</title>
+    <style>
+      img { margin-left: 50px; margin-right: 50px; }
+
+      .center {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width:100px;
+        height:100px;
+      }
+
+    </style>
+    <script type="text/javascript">
+      function executeLogic() {
+        var array = [];
+        array = document.getElementsByTagName("h1");
+        console.log(array);
+
+        const expr = 'Mangoes';
+        var text = "";
+        switch (expr) {
+          case 'Oranges':
+            console.log('Oranges are $0.59 a pound.');
+            text = 'Oranges are $0.59 a pound.';
+            break;
+          case 'Mangoes':
+          case 'Papayas':
+            console.log('Mangoes and papayas are $2.79 a pound.');
+            text = 'Mangoes and papayas are $2.79 a pound.';
+            // expected output: "Mangoes and papayas are $2.79 a pound."
+            break;
+          case 'Bananas':
+            console.log('Bananas are my favorite!');
+            text = 'Bananas are my favorite!';
+            break;
+          default:
+            console.log(`Sorry, we are out of ${expr}.`);
+            text = `Sorry, we are out of ${expr}.`;
+        }
+
+        for (i = 0; i < array.length; i++) {
+            if(array[i].innerText === "Hola") {
+              array[i].innerText = "Hi";
+            } else if(array[i].innerText === "Laboratorio 4") {
+              array[i].innerText = "o_o";
+            } else {
+              //array[i].innerText = "*****";
+              array[i].innerText = text;
+            }
+        }
+
+
+
+
+      }
+    </script>
+  </head>
+  <body onload="executeLogic();">
+    <a href="index.html">Index</a>
+    <h1 id="topHeader" style="color:blue;">Laboratorio 4</h1>
+    <br />
+    <h1 id="secondHeader" style="color:blue;">Subtitulo</h1>
+    <br />
+    <h1 id="thirdHeader" style="color:blue;">Hola</h1>
+    <h1 id="secondHeader" style="color:blue;">Subtitulo</h1>
+    <h1 id="secondHeader" style="color:blue;">Subtitulo</h1>
+    <h1 id="secondHeader" style="color:blue;">Subtitulo</h1>
+    <h1 id="secondHeader" style="color:blue;">Subtitulo</h1>
+    <div>
+      <img src="images/Angry_Birds_promo_art.png" alt="Red Bird" style="width:100px;height:100px;" />
+    </div>
+    <br />
+    <img src="images/Copyright.svg" alt="Copyright" class="center" />
+    <br />
+    <img src="images/batman.jpeg" alt="Batman Logo" style="width:100px;height:100px;" />
+    <img src="images/homero.gif" alt="Homer Simpson"  />
+    <img src="images/Angry_Birds_promo_art.png" alt="Red Bird" style="width:100px;height:100px;" />
+    <img src="images/Angry_Birds_promo_art.png" alt="Red Bird" style="width:100px;height:100px;" />
+    <img src="images/Angry_Birds_promo_art.png" alt="Red Bird" style="width:100px;height:100px;" />
+    <img src="images/Angry_Birds_promo_art.png" alt="Red Bird" style="width:100px;height:100px;" />
+  </body>
+  <footer>
+  </footer>
+</html>

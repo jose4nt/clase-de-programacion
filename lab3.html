@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Home Page</title>
+    <style>
+      div {
+        background-color: powderblue;
+      }
+      .primerDiv {
+        height: 100px;
+      }
+      .segundoDiv {
+        height: 200px;
+        font-weight: bold;
+        background-color: #F000F0;
+      }
+      .tercerDiv {
+        height: 300px;
+        font-family: "Verdana";
+        font-style: italic;
+        background-color: orange;
+      }
+    </style>
+    <script>
+      function loadStyles() {
+        document.getElementById("primerDiv").classList.add('primerDiv');
+        document.getElementById('segundoDiv').classList.add('segundoDiv');
+        document.getElementById('tercerDiv').classList.add('tercerDiv');
+
+        var arrayNumeros = [];
+        var arrayStrings = [];
+        var arrayObjetos = [];
+        var myString = "This is the string #";
+
+        for (var i = 0; i < 10; i++) {
+          arrayNumeros[i] = i+1;
+          arrayStrings[i] = myString+(i+1);
+          arrayObjetos[i] = new Circle((Math.random()+4), (Math.random()+4));
+        }
+
+        console.log("arrayNumeros:");
+        console.log(arrayNumeros);
+        console.log(arrayNumeros.length);
+        console.log(arrayNumeros.reverse());
+        console.log("arrayStrings:");
+        console.log(arrayStrings);
+        console.log("arrayObjetos:");
+        console.log(arrayObjetos);
+        arrayObjetos[0].update();
+        console.log(arrayObjetos[0].sayMyName());
+        function Circle(x, y) {
+          this.xValue = x;
+          this.yValue = y;
+          this.z = 0;
+
+          this.update = function() {
+            console.log("I'm updating!");
+          }
+
+          this.sayMyName = function() {
+            return "Jose";
+          }
+        }
+
+      }
+    </script>
+  </head>
+  <body onload="loadStyles()">
+    <a href="index.html">Index</a>
+    <div id="primerDiv">Primer DIV</div>
+    <div id="segundoDiv">Segundo DIV</div>
+    <div id="tercerDiv">Tercer DIV</div>
+  </body>
+  <footer>
+  </footer>
+</html>

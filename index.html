@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Index</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+      h1 { color:red; font-size: 300%; font-family: Consolas; }
+      h3 {color:orange;}
+      h4 {color:purple;}
+    </style>
+    <script type="text/javascript">
+    var miNombre = "JOSE ANTONIO";
+    //alert (miNombre);
+
+    function daleClick() {
+      alert("Esto fue un click");
+    }
+    function cambiaColorFondo() {
+      document.body.style.backgroundColor = "yellow";
+    }
+    function regresaColorFondo() {
+      document.body.style.backgroundColor = "powderblue";
+    }
+    function loadAjaxText() {
+      console.log("loadAjaxText!!");
+      var xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+          document.getElementById("demo").innerHTML =
+          this.responseText;
+        }
+      };
+      /*var data = new FormData();
+      data.append('user', 'javc');
+      data.append('pwd', 'pas$w0rd');
+      data.append('organization', 'mastercard');
+      data.append('requiredkey', '1234567890');
+
+      xhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');*/
+      xhttp.open("GET", "https://www.google.com", true);
+      xhttp.setRequestHeader('Access-Control-Allow-Headers', '*');
+      xhttp.send();
+    }
+    </script>
+    <script src="https://kit.fontawesome.com/f1e95cb120.js" crossorigin="anonymous"></script>
+  </head>
+  <body onload="onLoadFunction();">
+    <a href="home.html">HOME</a>
+    <a href="lab1.html">Laboratorio 1</a>
+    <a href="lab2.html">Laboratorio 2</a>
+    <a href="lab3.html">Laboratorio 3</a>
+    <a href="lab4.html">Laboratorio 4</a>
+    <a href="lab5.html">Laboratorio 5</a>
+  </body>
+  <footer>
+  </footer>
+</html>
+<script type="text/javascript">
+  /*function showHeaderText() {
+    var element = document.getElementById("topHeader");
+    console.log("element >> " + element);
+    var myCharacter = returnFirstLetter(element.textContent);
+    console.log("myCharacter >> " + myCharacter);
+
+    alert(myCharacter);
+    console.log(myCharacter[0]);
+
+  }
+
+  function returnFirstLetter(text) {
+    //var positionZero = text[0];
+    //positionZero = positionZero + '+++++';
+    return text[0] + '+++++';
+  }*/
+
+  function onLoadFunction() {
+    var abecedario = 'abcdefghijklmnopqrstuvwxyz';
+    var abecedarioInvertido = reverseText(abecedario);
+    console.log (abecedarioInvertido);
+    console.log(abecedarioInvertido[0]);
+    console.log(abecedario);
+
+  }
+
+  function reverseText(text) {
+    //console.log (text);
+    var reversedText = "";
+
+
+    for (var i = text.length - 1; i >=0; i--) {
+      //console.log (i);
+      reversedText = reversedText + text[i];
+      //console.log (reversedText);
+    }
+    return reversedText;
+  }
+
+  var miguelito = "MIGUEL";
+  console.log (miguelito);
+</script>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Laboratorio 5</title>
+    <script type="text/javascript">
+        function myFunction() {
+          for (var i = 0; i < 10; i++) {
+            //console.log("i: "+i);
+          }
+          for (j = 10; j < 20; j++) {
+            //console.log("j: "+j);
+          }
+          for (counter = 0; counter < 10; counter++) {
+            for (counter2 = 0; counter2 < 10; counter2++) {
+              for (counter3 = 0; counter3 < 10; counter3++) {
+                //console.log("counter2: "+counter+"-"+counter2+"-"+counter3);
+              }
+            }
+          }
+
+          x = 0;
+          do {
+            x++;
+            //console.log("x:"+x);
+          } while (x < 10);
+
+          y = 0;
+          while (y < 10) {
+            //console.log("y:"+y);
+            y++;
+          }
+          booleanValue = true;
+          i = 0;
+          while (booleanValue) {
+            //console.log(".");
+            i++;
+            if (i === 1000) {
+              //booleanValue = false;
+              break;
+            }
+
+
+          }
+
+
+        }
+        function recursiveFunction(foo) {
+          console.log("foo:"+foo)
+          if (foo === 500) {
+              return;
+          }
+          param = foo;
+          param++;
+          recursiveFunction(param);
+        }
+
+        function factorial(num){
+          if (num === 0) {
+            return 1;
+          }
+          result = num*factorial(num-1);
+          return result;
+        }
+    </script>
+  </head>
+  <body onload="myFunction();recursiveFunction(0);alert(factorial(4));">
+    <!-- ESTE ES UN COMMENT VISIBLE EN LA PAGINA -->
+    <a href="index.html">Index</a>
+    <h1 style="color:blue;">Laboratorio 5</h1>
+  </body>
+  <footer>
+  </footer>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Laboratorio 1</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+      h1 { color:red; font-size: 300%; font-family: Consolas; }
+      h3 {color:orange;}
+      h4 {color:purple;}
+    </style>
+    <script type="text/javascript">
+    var miNombre = "JOSE ANTONIO";
+    //alert (miNombre);
+
+    function daleClick() {
+      alert("Esto fue un click");
+    }
+    function cambiaColorFondo() {
+      document.body.style.backgroundColor = "yellow";
+    }
+    function regresaColorFondo() {
+      document.body.style.backgroundColor = "powderblue";
+    }
+    function loadAjaxText() {
+      console.log("loadAjaxText!!");
+      var xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+          document.getElementById("demo").innerHTML =
+          this.responseText;
+        }
+      };
+      /*var data = new FormData();
+      data.append('user', 'javc');
+      data.append('pwd', 'pas$w0rd');
+      data.append('organization', 'mastercard');
+      data.append('requiredkey', '1234567890');
+
+      xhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');*/
+      xhttp.open("GET", "https://www.google.com", true);
+      xhttp.setRequestHeader('Access-Control-Allow-Headers', '*');
+      xhttp.send();
+    }
+    </script>
+    <script src="https://kit.fontawesome.com/f1e95cb120.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <a href="index.html">Index</a>
+    <h1 id="topHeader" style="color:blue;">Laboratorio 1</h1>
+
+    <h1 id="anotherHeader" class="teacher">This is the another Header</h1>
+    <h1 class="miguelito acosta">MIGUEL</h1>
+    <h2 style="color:red;">This is heading 2</h2>
+    <h3>This is heading 3</h3>
+    <div>
+      Div
+      <span>
+        Span
+        <p>
+          Paragraph
+          <a href="#">Link in <bold>BOLD</bold></a>
+
+        </p>
+      </span>
+    </div>
+    <h4>AJAX Test is below</h4>
+    <div id="demo">
+
+    </div>
+    <button onclick="loadAjaxText()">Bot&#243;n para ejecutar AJAX &#174;</button>
+    <h5>This is heading 5</h5>
+    <h6>This is heading 6</h6>
+
+    <a href="home.html">Home</a>
+    <a href="#" onclick="daleClick()" onmouseover="cambiaColorFondo()" onmouseout="regresaColorFondo()">Random link</a>
+
+    <i class="fas fa-cloud"></i>
+    <i class="fas fa-heart"></i>
+    <i class="fas fa-car"></i>
+    <i class="fas fa-file"></i>
+    <i class="fas fa-bars"></i>
+
+
+
+    <p>This is a paragraph.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In venenatis auctor arcu non placerat. Sed a sagittis magna. Duis dictum, ligula vitae dapibus tempus, nisl sem tincidunt purus, vitae blandit eros augue vitae neque. Donec vitae tellus non purus porttitor tristique id non lectus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nam nulla turpis, egestas vitae facilisis id, rutrum nec eros. In posuere non lectus a sollicitudin. Suspendisse nec erat est. Ut maximus posuere ultrices. Integer dictum libero eu orci sodales, nec hendrerit tortor lacinia. Suspendisse pretium mollis eros, a rutrum orci lacinia pellentesque. In gravida at ligula at interdum. Proin dapibus purus diam, at maximus dui tincidunt ac. Pellentesque bibendum metus mauris, vitae condimentum quam tincidunt a. Fusce viverra vehicula condimentum.
+    </p>
+    <p>
+Aenean tempus purus interdum quam rhoncus mattis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Ut venenatis, purus a varius egestas, orci quam maximus nunc, sed fermentum felis quam ut nibh. Sed quis mi in lorem sodales efficitur. Suspendisse sit amet ipsum enim. Donec id arcu ac lacus maximus scelerisque ac at quam. Mauris vel lobortis velit, sit amet hendrerit purus. Donec felis tortor, pulvinar id porttitor id, vulputate id velit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ultricies quam ac mollis varius. Mauris porta mi mi, nec sodales felis faucibus consectetur.
+    </p>
+    <p>
+Pellentesque luctus quis orci fringilla aliquet. Donec non tincidunt neque, et elementum enim. Morbi vitae ultricies enim. Nulla facilisi. Suspendisse odio massa, ullamcorper sed diam nec, pharetra tincidunt magna. Aenean sit amet ultricies metus. Phasellus dignissim rhoncus lectus. Proin lacinia turpis at quam aliquet pharetra. Donec augue risus, molestie at nunc ac, dapibus mollis ante. Pellentesque at ultricies dolor. Interdum et malesuada fames ac ante ipsum primis in faucibus.
+    </p>
+    <p>
+Curabitur consectetur nisl sed ligula finibus commodo. In quis lorem lobortis, posuere sem ac, dignissim diam. Vivamus eget hendrerit felis, eget laoreet libero. Nunc commodo tellus libero, ut varius tortor fermentum in. Nam eu sapien ligula. Fusce et condimentum lacus. Suspendisse pharetra ante in sem aliquam molestie.
+    </p>
+    <p>
+Cras in justo congue, congue ante quis, cursus sapien. Ut congue, leo nec aliquam dictum, nisl metus rhoncus mi, nec pharetra odio erat vel tellus. Donec mattis mattis erat, ut placerat erat vulputate tempor. Nunc cursus, lectus id iaculis imperdiet, tortor tortor fringilla mi, ac vestibulum justo erat nec dui. Quisque et risus id lectus interdum consectetur et commodo nibh. Donec vel nibh et sem venenatis feugiat sit amet non lorem. Quisque laoreet semper sapien eget molestie. Vivamus eu sem eleifend, facilisis risus eget, sollicitudin felis. Aliquam lobortis molestie erat, a hendrerit elit mattis et.
+    </p>
+
+  </body>
+</html>

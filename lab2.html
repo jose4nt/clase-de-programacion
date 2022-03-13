@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Laboratorio 2</title>
+    <style>
+     table {
+       border: 1px solid black;
+     }
+
+     .nietaMenor {
+       border: 3px solid red;
+     }
+    </style>
+    <script>
+      function applyRedBorder2NietaMenor() {
+        var tabla = document.getElementById("nietos");
+        var array = [];
+        for (var i = 1; i < tabla.rows.length; i++) {
+          console.log(tabla.rows[i].cells[0].innerText);
+          array[i-1] = parseInt(tabla.rows[i].cells[2].innerText, 10);
+        }
+        console.log("array:");
+        console.log(array);
+        var min = 0;
+        for (var i = 0; i < array.length; i++) {
+          //console.log("i:"+i);
+          //console.log(min);
+          if(i == 0) {
+            min = array[i];
+            //00010 & 11111 = 00010
+          } else if(i > 0 && i <= array.length) {
+            //console.log("array[i]:"+array[i]);
+            //console.log("min:"+min);
+            if (array[i] <= min) {
+              min = array[i];
+              //console.log("array[i] < min");
+            } else if (array[i] > array[i+1]) {
+              min = array[i+1];
+              //console.log("array[i] > array[i+1]");
+            } else {
+              //console.log("else");
+            }
+          }
+          console.log("min final:"+min);
+        }
+
+        for (var i = 1; i < tabla.rows.length; i++) {
+          if(parseInt(tabla.rows[i].cells[2].innerText, 10) == min) {
+            tabla.rows[i].cells[0].classList.add('nietaMenor');
+          }
+        }
+
+        //console.log(min);
+        //console.log(tabla);
+        //console.log(tabla.rows)
+        //console.log(tabla.rows.length);
+      }
+
+    </script>
+
+  </head>
+  <body>
+    <a href="index.html">Index</a>
+    <h1 style="color:blue;">Este es el Laboratorio 2: Tablas</h1>
+    <div id="tablaPrincipal">
+      <table id="nietos">
+        <tr>
+          <th>Nombre</th>
+          <th>Apellido</th>
+          <th>Edad</th>
+          <!-- th genero -->
+        </tr>
+        <tr>
+          <td>Fernanda</td>
+          <td>Vel&#0225;zquez</td>
+          <td>23</td>
+        </tr>
+        <tr>
+          <td>Miguel &#193;ngel</td>
+          <td>Acosta</td>
+          <td>19</td>
+        </tr>
+        <tr>
+          <td>Juan Pablo</td>
+          <td>Acosta</td>
+          <td>17</td>
+        </tr>
+        <tr>
+          <td>Ana In&#233;s</td>
+          <td>Vel&#0225;zquez</td>
+          <td>13</td>
+        </tr>
+        <tr>
+          <td>Natalia</td>
+          <td>Vel&#0225;zquez</td>
+          <td>9</td>
+        </tr>
+      </table>
+    </div>
+    <button onclick="applyRedBorder2NietaMenor()">Bot&#243;n para ejecutar JavaScript</button>
+  </body>
+  <footer>
+  </footer>
+</html>
